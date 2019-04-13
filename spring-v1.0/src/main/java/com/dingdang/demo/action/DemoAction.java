@@ -18,9 +18,11 @@ public class DemoAction {
     @Autowired private DemoService demoService;
 
     @RequestMapping("/get")
-    public String get(@RequestParam String name){
+    public String get(HttpServletRequest request, HttpServletResponse resp,
+                      @RequestParam String name) throws IOException {
         String content = demoService.get(name);
         System.out.println(content);
+        resp.getWriter().write(content);
         return "get";
     }
 

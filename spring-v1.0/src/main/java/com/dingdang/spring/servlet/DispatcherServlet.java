@@ -2,6 +2,7 @@ package com.dingdang.spring.servlet;
 
 import com.dingdang.spring.annotation.Autowired;
 import com.dingdang.spring.annotation.Controller;
+import com.dingdang.spring.annotation.RequestMapping;
 import com.dingdang.spring.annotation.Service;
 
 import javax.servlet.ServletConfig;
@@ -13,11 +14,10 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class DispatcherServlet extends HttpServlet {
@@ -28,6 +28,7 @@ public class DispatcherServlet extends HttpServlet {
 
     private List<String> classNames = new ArrayList<>();
 
+    private Map<String, Method> handlerMapping = new HashMap<>();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -37,7 +38,28 @@ public class DispatcherServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("------- do Post ----------");
+        try {
+            doDispatch(req, resp);
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
 
+    private void doDispatch(HttpServletRequest req, HttpServletResponse resp) throws IOException, InvocationTargetException, IllegalAccessException {
+        String url = req.getRequestURI();
+        String contextPath = req.getContextPath();
+        url = url.replaceAll(contextPath, "").replaceAll("/+", "/");
+        if (!this.handlerMapping.containsKey(url)){
+            resp.getWriter().write("404 Not Found!");
+            return;
+        }
+        Method method = this.handlerMapping.get(url);
+        Map<String, String[]> params = req.getParameterMap();
+        String beanName = lowerFirstCase(method.getDeclaringClass().getSimpleName());
+        Object result = method.invoke(beanMap.get(beanName), new Object[]{req, resp, params.get("name")[0]});
+        System.out.println("result = " + result);
     }
 
     @Override
@@ -121,14 +143,15 @@ public class DispatcherServlet extends HttpServlet {
                     Class<?>[] interfaces = clazz.getInterfaces();
 
                     for (Class<?> i :interfaces){
-                        beanMap.put(i.getName(),instance);
+                        if (beanMap.containsKey(i.getName())){
+                            throw new Exception("The " + i.getName() + " is exists!");
+                        }
+                        beanName = i.getName();
+                        beanMap.put(beanName, instance);
                     }
-
                 }else{
                     continue;
                 }
-
-
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -161,6 +184,37 @@ public class DispatcherServlet extends HttpServlet {
     }
 
     private void initHandlerMapping() {
+        if (beanMap.isEmpty()){
+            return;
+        }
+        for (Map.Entry<String, Object> entry : beanMap.entrySet()){
+            Class<?> clazz = entry.getValue().getClass();
+            if (!clazz.isAnnotationPresent(Controller.class)){
+                continue;
+            }
+
+            String baseUrl = "";
+            if (clazz.isAnnotationPresent(RequestMapping.class)){
+                RequestMapping requestMapping = clazz.getAnnotation(RequestMapping.class);
+                baseUrl = requestMapping.value();
+            }
+
+            //默认获取所有的public方法
+            for (Method method : clazz.getMethods()){
+                if (!method.isAnnotationPresent(RequestMapping.class)){
+                    continue;
+                }
+                RequestMapping requestMapping = method.getAnnotation(RequestMapping.class);
+                String url = ("/" + baseUrl + "/" + requestMapping.value()).replaceAll("/+", "/");
+
+                handlerMapping.put(url, method);
+                System.out.println("Mapped : " + url + ", " + method);
+            }
+
+
+
+
+        }
 
     }
 
