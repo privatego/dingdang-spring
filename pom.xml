@@ -9,7 +9,7 @@
   <version>1.0.0</version>
   <modules>
     <module>spring-v1.0</module>
-    <module>spring-v2.0</module>
+    <module>spring-v2.1</module>
 
   </modules>
   <packaging>pom</packaging>

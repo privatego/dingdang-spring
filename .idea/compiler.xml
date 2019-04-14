@@ -8,7 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-v1.0" />
-        <module name="spring-v2.0" />
+        <module name="spring-v2.1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -16,6 +16,7 @@
       <module name="spring-framework" target="1.8" />
       <module name="spring-orm-demo" target="1.7" />
       <module name="spring-orm-v1.0" target="1.7" />
+      <module name="spring-v2.0" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
