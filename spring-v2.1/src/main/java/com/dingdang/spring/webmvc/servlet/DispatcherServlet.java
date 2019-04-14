@@ -40,6 +40,18 @@ public class DispatcherServlet extends HttpServlet {
 
     private List<ViewResolver> viewResolvers = new ArrayList<>();
 
+    private ApplicationContext context;
+
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+
+        //初始化IOC容器
+        context = new ApplicationContext(config.getInitParameter(LOCATION));
+
+        initStrategies(context);
+    }
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -63,13 +75,14 @@ public class DispatcherServlet extends HttpServlet {
     }
 
     private void doDispatch(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-
+        //根据用户请求的URL来获得一个Handler
         HandlerMapping handler = getHandler(req);
         if (handler == null){
             resp.getWriter().write("404 Not Found .");
         }
 
         HandlerAdapter ha = getHandlerAdapter(handler);
+        //调用方法，得到返回值
         ModelAndView mv = ha.handler(req, resp, handler);
 
         //这一步才是真正的输出
@@ -98,7 +111,11 @@ public class DispatcherServlet extends HttpServlet {
     private HandlerAdapter getHandlerAdapter(HandlerMapping handler) {
         if (this.handlerAdapters.isEmpty())
             return null;
-        return this.handlerAdapters.get(handler);
+        HandlerAdapter ha = this.handlerAdapters.get(handler);
+        if (ha.supports(handler)){
+            return ha;
+        }
+        return null;
     }
 
     private void processDispatchResult(HttpServletResponse resp, ModelAndView mv) throws Exception {
@@ -125,37 +142,53 @@ public class DispatcherServlet extends HttpServlet {
 
     }
 
-    @Override
-    public void init(ServletConfig config) throws ServletException {
-
-        //初始化IOC容器
-        ApplicationContext context = new ApplicationContext(config.getInitParameter(LOCATION));
-
-        initStrategies(context);
-    }
-
     private void initStrategies(ApplicationContext context) {
 
 
 
         //文件上传解析
-        //initMultipartResolver(context);
+        initMultipartResolver(context);
         //本地化解析
-        //initLocaleResolver(context);
+        initLocaleResolver(context);
         //主题解析
-        //initThemeResolver(context);
+        initThemeResolver(context);
         //通过HandlerMapping，将请求映射到处理器
         initHandlerMappings(context);
         //通过HandlerAdapter进行多类型的参数动态匹配
         initHandlerAdapters(context);
         //如果执行过程中遇到异常，将交给HandlerExceptionResouvlers
-        //initHandlerExceptionResolvers(context);
+        initHandlerExceptionResolvers(context);
         //直接解析请求到视图名
-        //initRequestToViewNameTranslator(context);
+        initRequestToViewNameTranslator(context);
         //通过viewResolvers解析逻辑视图到具体视图实现
         initViewResolvers(context);
         // flash映射管理器
-        //initFlashMapManager(context);
+        initFlashMapManager(context);
+    }
+
+    private void initMultipartResolver(ApplicationContext context) {
+
+    }
+
+    private void initLocaleResolver(ApplicationContext context) {
+
+    }
+
+    private void initThemeResolver(ApplicationContext context) {
+
+
+    }
+
+    private void initHandlerExceptionResolvers(ApplicationContext context) {
+
+    }
+
+    private void initRequestToViewNameTranslator(ApplicationContext context) {
+
+    }
+
+    private void initFlashMapManager(ApplicationContext context) {
+
     }
 
 

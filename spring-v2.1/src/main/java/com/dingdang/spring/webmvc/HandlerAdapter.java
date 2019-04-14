@@ -14,6 +14,10 @@ public class HandlerAdapter {
         this.paramMapping = paramMapping;
     }
 
+    public boolean supports(Object handler){
+        return (handler instanceof HandlerMapping);
+    }
+
     /**
      *
      * @param req

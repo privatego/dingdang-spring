@@ -34,7 +34,7 @@ public class ApplicationContext extends DefaultListableBeanFactory implements Be
     /**
      * 用来保证注册时容器中的单例
      */
-    private Map<String, Object> beanCacheMap = new HashMap<>();
+    private Map<String, Object> singletonBeanCacheMap = new HashMap<>();
 
     /**
      * 存放所有被代理过的对象
@@ -61,21 +61,25 @@ public class ApplicationContext extends DefaultListableBeanFactory implements Be
     @Override
     public Object getBean(String beanName) {
         BeanDefinition beanDefinition = this.beanDefinitionMap.get(beanName);
-        String className = beanDefinition.getBeanClassName();
         try {
             //生成通知事件
             BeanPostProcessor beanPostProcessor = new BeanPostProcessor();
 
             Object instance = instantionBean(beanDefinition);
-            if (null == instance)return null;
-            // 在初始化以前通知一次
+            if (null == instance){
+                return null;
+            }
+
+            // 在实例化以前调用一次
             beanPostProcessor.postProcessBeforeInitialization(instance, beanName);
-            BeanWrapper beanWrapper = new BeanWrapper(beanDefinition);
-            beanWrapper.setAopConfig(instantionAopConfig(beanDefinition));
-            beanWrapper.setBeanPostProcessor(beanPostProcessor);
+            BeanWrapper beanWrapper = new BeanWrapper(instance);
             this.beanWrapperMap.put(beanName, beanWrapper);
-            // 在初始化以后通知一次
+//            beanWrapper.setAopConfig(instantionAopConfig(beanDefinition));
+//            beanWrapper.setBeanPostProcessor(beanPostProcessor);
+            // 在实例化以后调用一次
             beanPostProcessor.postProcessAfterInitialization(instance, beanName);
+            populateBean(beanName, instance);
+
             //通过这样一调用，相当于给我们自己留有了可操作的空间
             return beanWrapperMap.get(beanName).getWrapperInstance();
         }catch (Exception e){
@@ -138,17 +142,16 @@ public class ApplicationContext extends DefaultListableBeanFactory implements Be
 
     // 传一个BeanDefinition，就返回一个实例Bean
     private Object instantionBean(BeanDefinition beanDefinition){
+        Object instance = null;
         String className = beanDefinition.getBeanClassName();
         try {
-            Object instance = null;
-            if (!this.beanCacheMap.containsKey(className)){
-                instance = this.beanCacheMap.get(className);
+            if (!this.singletonBeanCacheMap.containsKey(className)){
+                instance = this.singletonBeanCacheMap.get(className);
             }else {
                 Class<?> clazz = Class.forName(className);
                 instance = clazz.newInstance();
-                this.beanCacheMap.put(className, instance);
+                this.singletonBeanCacheMap.put(className, instance);
             }
-
             return instance;
         }catch (Exception e){
             e.printStackTrace();
@@ -180,14 +183,13 @@ public class ApplicationContext extends DefaultListableBeanFactory implements Be
             return;
         }
 
-        Field[] fields = clazz.getFields();
+        Field[] fields = clazz.getDeclaredFields();
         for (Field field : fields){
             if (!field.isAnnotationPresent(Autowired.class)){
                 continue;
             }
 
             Autowired autowired = field.getAnnotation(Autowired.class);
-
             String autowiredBeanName = autowired.value().trim();
             if ("".equals(autowiredBeanName)){
                 autowiredBeanName = field.getType().getName();

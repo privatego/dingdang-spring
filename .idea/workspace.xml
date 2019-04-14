@@ -7,44 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f20d2573-84fd-4375-8c7a-8f95c50543d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/demo/action/DemoAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/demo/aspect/LogAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/demo/service/DemoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/demo/service/DemoServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/beans/BeanDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/beans/BeanPostProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/beans/BeanWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/context/AbstractApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/context/ApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/context/ApplicationContextAware.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/context/DefaultListableBeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/context/support/BeanDefinitionReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/core/BeanFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/core/FactoryBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/framework/annotation/Autowired.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/framework/annotation/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/framework/annotation/RequestMapping.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/framework/annotation/RequestParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/framework/annotation/Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/framework/aop/AopConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/framework/aop/AopProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/framework/aop/AopProxyUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/HandlerAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/HandlerMapping.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/ModelAndView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/ViewResolver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/servlet/DispatcherServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/resources/application-aop.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-v2.1/src/test/java/com/dingdang/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-v2.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/beans/BeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/beans/BeanPostProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/context/ApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/context/ApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/HandlerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/HandlerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/HandlerMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/HandlerMapping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/ViewResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/ViewResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/servlet/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/servlet/DispatcherServlet.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -92,7 +61,7 @@
         <counts>
           <entry key="gitignore" value="3" />
           <entry key="iml" value="1" />
-          <entry key="java" value="33" />
+          <entry key="java" value="39" />
           <entry key="md" value="2" />
           <entry key="png" value="2" />
           <entry key="properties" value="1" />
@@ -104,7 +73,7 @@
         <counts>
           <entry key="IDEA_MODULE" value="1" />
           <entry key="Image" value="2" />
-          <entry key="JAVA" value="33" />
+          <entry key="JAVA" value="39" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="PlantUML file" value="1" />
@@ -114,38 +83,29 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1541" />
+          <entry key="java" value="1740" />
           <entry key="md" value="3038" />
           <entry key="puml" value="50" />
-          <entry key="xml" value="115" />
+          <entry key="xml" value="117" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1541" />
+          <entry key="JAVA" value="1740" />
           <entry key="Markdown" value="3038" />
           <entry key="PlantUML file" value="50" />
-          <entry key="XML" value="115" />
+          <entry key="XML" value="117" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring-v1.0/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+            <state relative-caret-position="228">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -153,36 +113,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="192" column="14" selection-start-line="192" selection-start-column="14" selection-end-line="192" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="67" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+            <state relative-caret-position="955">
+              <caret line="215" column="14" selection-start-line="215" selection-start-column="14" selection-end-line="215" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -195,8 +127,73 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spring-v2.1/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-114">
-              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+            <state relative-caret-position="-1066">
+              <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/context/ApplicationContext.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="153" column="13" selection-start-line="153" selection-start-column="13" selection-end-line="153" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/beans/BeanPostProcessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+              <folding>
+                <element signature="e#159#160#0" expanded="true" />
+                <element signature="e#186#187#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/servlet/DispatcherServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="581">
+              <caret line="117" column="19" selection-start-line="117" selection-start-column="19" selection-end-line="117" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/HandlerMapping.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/HandlerAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-104">
+              <caret line="37" column="38" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+              <folding>
+                <element signature="e#467#468#0" expanded="true" />
+                <element signature="e#491#492#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/ViewResolver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -213,6 +210,9 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>v2.0</find>
+      <find>spring-v2.0</find>
+      <find>getBean</find>
+      <find>getHandlerA</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -239,8 +239,14 @@
         <option value="$PROJECT_DIR$/.idea/compiler.xml" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/spring-v2.0/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-v2.1/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-v2.1/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/context/ApplicationContext.java" />
+        <option value="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/beans/BeanPostProcessor.java" />
+        <option value="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/HandlerMapping.java" />
+        <option value="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/HandlerAdapter.java" />
+        <option value="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/servlet/DispatcherServlet.java" />
+        <option value="$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/ViewResolver.java" />
       </list>
     </option>
   </component>
@@ -309,6 +315,137 @@
               <item name="dingdang-spring" type="462c0819:PsiDirectoryNode" />
               <item name="spring-v2.1" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="dingdang-spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dingdang-spring" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-v2.1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dingdang-spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dingdang-spring" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-v2.1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dingdang-spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dingdang-spring" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-v2.1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dingdang-spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dingdang-spring" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-v2.1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dingdang" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dingdang-spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dingdang-spring" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-v2.1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dingdang" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dingdang-spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dingdang-spring" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-v2.1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dingdang" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dingdang-spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dingdang-spring" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-v2.1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dingdang" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="beans" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dingdang-spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dingdang-spring" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-v2.1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dingdang" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="context" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dingdang-spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dingdang-spring" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-v2.1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dingdang" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dingdang-spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dingdang-spring" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-v2.1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dingdang" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="webmvc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dingdang-spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dingdang-spring" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-v2.1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dingdang" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="webmvc" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dingdang-spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dingdang-spring" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-v2.1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dingdang-spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dingdang-spring" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-v2.1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dingdang-spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dingdang-spring" type="462c0819:PsiDirectoryNode" />
+              <item name="spring-v2.1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -322,7 +459,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/blessed/orchid/gp/dingdang-spring/doc/Spring模块结构图.png&#10;DefaultList&#9;FILE&#9;file:///Users/blessed/orchid/gp/spring-framework/spring-beans/src/main/java/org/springframework/beans/factory/support/DefaultListableBeanFactory.java&#10;AbstractXmlAppli&#9;FILE&#9;file:///Users/blessed/orchid/gp/spring-framework/spring-context/src/main/java/org/springframework/context/support/AbstractXmlApplicationContext.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555250383830" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555252701135" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -330,6 +467,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35672516" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spring-v2.1" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -343,7 +485,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.spring-v2.1">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -362,6 +504,78 @@
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="spring-v2.1" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.43" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="spring-v2.1:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/spring-v2.1" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_dingdang-spring_2" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51817" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="spring-v2.1:war exploded" />
+        </option>
       </method>
     </configuration>
     <configuration name="spring_v1.0" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.43" ALTERNATIVE_JRE_ENABLED="false">
@@ -436,6 +650,10 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.spring_v1.0" />
+      <item itemvalue="Tomcat Server.spring-v2.1" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -452,12 +670,12 @@
       <workItem from="1555080507048" duration="15191000" />
       <workItem from="1555247137843" duration="1114000" />
       <workItem from="1555248294284" duration="2172000" />
-      <workItem from="1555250473333" duration="258000" />
+      <workItem from="1555250473333" duration="2082000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22483000" />
+    <option name="totallyTimeSpent" value="24307000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1057" width="1920" height="1057" extended-state="0" />
@@ -467,7 +685,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Capture Tool" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.29339722" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.29339722" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -477,7 +695,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3598726" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.12526539" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.3481953" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
@@ -488,7 +706,7 @@
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Database" order="2" weight="0.32960597" />
-      <window_info anchor="right" id="Maven Projects" order="3" sideWeight="0.49841774" visible="true" weight="0.19914803" />
+      <window_info anchor="right" id="Maven Projects" order="3" sideWeight="0.49841774" weight="0.19914803" />
       <window_info anchor="right" id="ASM" order="4" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info anchor="right" id="Theme Preview" order="6" />
@@ -695,13 +913,6 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-v2.1/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spring-v2.0/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -711,15 +922,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="192" column="14" selection-start-line="192" selection-start-column="14" selection-end-line="192" selection-end-column="14" />
+        <state relative-caret-position="955">
+          <caret line="215" column="14" selection-start-line="215" selection-start-column="14" selection-end-line="215" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-v2.1/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1066">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/context/ApplicationContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="153" column="13" selection-start-line="153" selection-start-column="13" selection-end-line="153" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/HandlerMapping.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/beans/BeanPostProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding>
+            <element signature="e#159#160#0" expanded="true" />
+            <element signature="e#186#187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/servlet/DispatcherServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="117" column="19" selection-start-line="117" selection-start-column="19" selection-end-line="117" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/HandlerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-104">
+          <caret line="37" column="38" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+          <folding>
+            <element signature="e#467#468#0" expanded="true" />
+            <element signature="e#491#492#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-v2.1/src/main/java/com/dingdang/spring/webmvc/ViewResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
         </state>
       </provider>
     </entry>
