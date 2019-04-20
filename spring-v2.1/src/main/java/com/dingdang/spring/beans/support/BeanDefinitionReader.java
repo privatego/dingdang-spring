@@ -1,4 +1,4 @@
-package com.dingdang.spring.context.support;
+package com.dingdang.spring.beans.support;
 
 import com.dingdang.spring.beans.BeanDefinition;
 

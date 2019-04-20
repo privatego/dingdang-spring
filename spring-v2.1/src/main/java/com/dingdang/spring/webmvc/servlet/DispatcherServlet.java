@@ -198,38 +198,43 @@ public class DispatcherServlet extends HttpServlet {
 
         //首先从容器中取到所有的实例
         String[] beanNames = context.getBeanDefinitionNames();
-        for (String beanName : beanNames){
-            Object instance = context.getBean(beanName);
-            //到了MVC层，对外提供的方法只有一个getBean方法
-            //返回的对象不是BeanWrapper，怎么办？
-            Object proxy = context.getBean(beanName);
-            Object controller = null;
-            try {
-                controller = AopProxyUtils.getTargetObject(proxy);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        try {
 
-            Class<?> clazz = instance.getClass();
-            String baseUrl = "";
-            if (!clazz.isAnnotationPresent(Controller.class)){
-                RequestMapping requestMapping = clazz.getAnnotation(RequestMapping.class);
-                baseUrl = requestMapping.value();
-            }
-
-            //扫描所有的public方法
-            Method[] methods = clazz.getMethods();
-            for (Method method : methods){
-                if (!method.isAnnotationPresent(RequestMapping.class)){
-                    continue;
+            for (String beanName : beanNames){
+                Object instance = context.getBean(beanName);
+                //到了MVC层，对外提供的方法只有一个getBean方法
+                //返回的对象不是BeanWrapper，怎么办？
+                Object proxy = context.getBean(beanName);
+                Object controller = null;
+                try {
+                    controller = AopProxyUtils.getTargetObject(proxy);
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                RequestMapping requestMapping = method.getAnnotation(RequestMapping.class);
-                String regex = ("/" + baseUrl + requestMapping.value().replaceAll("\\*", ".*")).replaceAll("/+", "/");
-                Pattern pattern = Pattern.compile(regex);
-                this.handlerMappings.add(new HandlerMapping(pattern, controller, method));
-                System.out.println("Mapping: " + regex + " , " + method);
-            }
 
+                Class<?> clazz = instance.getClass();
+                String baseUrl = "";
+                if (!clazz.isAnnotationPresent(Controller.class)){
+                    RequestMapping requestMapping = clazz.getAnnotation(RequestMapping.class);
+                    baseUrl = requestMapping.value();
+                }
+
+                //扫描所有的public方法
+                Method[] methods = clazz.getMethods();
+                for (Method method : methods){
+                    if (!method.isAnnotationPresent(RequestMapping.class)){
+                        continue;
+                    }
+                    RequestMapping requestMapping = method.getAnnotation(RequestMapping.class);
+                    String regex = ("/" + baseUrl + requestMapping.value().replaceAll("\\*", ".*")).replaceAll("/+", "/");
+                    Pattern pattern = Pattern.compile(regex);
+                    this.handlerMappings.add(new HandlerMapping(pattern, controller, method));
+                    System.out.println("Mapping: " + regex + " , " + method);
+                }
+
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
 
 

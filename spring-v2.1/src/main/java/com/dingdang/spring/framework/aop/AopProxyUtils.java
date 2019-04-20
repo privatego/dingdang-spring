@@ -22,7 +22,7 @@ public class AopProxyUtils {
     private static Object getProxyTargetObject(Object proxy) throws Exception{
         Field h = proxy.getClass().getSuperclass().getDeclaredField("h");
         h.setAccessible(true);
-        AopProxy aopProxy = (AopProxy) h.get(proxy);
+        JdkDynamicAopProxy aopProxy = (JdkDynamicAopProxy) h.get(proxy);
         Field target = aopProxy.getClass().getDeclaredField("target");
         target.setAccessible(true);
         return  target.get(aopProxy);

@@ -1,24 +1,22 @@
 package com.dingdang.spring.context;
 
 import com.dingdang.spring.beans.BeanDefinition;
-import com.dingdang.spring.beans.BeanPostProcessor;
+import com.dingdang.spring.beans.config.BeanPostProcessor;
 import com.dingdang.spring.beans.BeanWrapper;
-import com.dingdang.spring.context.support.BeanDefinitionReader;
+import com.dingdang.spring.beans.support.BeanDefinitionReader;
+import com.dingdang.spring.beans.support.DefaultListableBeanFactory;
 import com.dingdang.spring.core.BeanFactory;
 import com.dingdang.spring.framework.annotation.Autowired;
 import com.dingdang.spring.framework.annotation.Controller;
 import com.dingdang.spring.framework.annotation.Service;
-import com.dingdang.spring.framework.aop.AopConfig;
+import com.dingdang.spring.framework.aop.*;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class ApplicationContext extends DefaultListableBeanFactory implements BeanFactory {
 
@@ -27,19 +25,14 @@ public class ApplicationContext extends DefaultListableBeanFactory implements Be
     private BeanDefinitionReader reader;
 
     /**
-     * 保存配置时的Bean
-     */
-    private Map<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<>();
-
-    /**
      * 用来保证注册时容器中的单例
      */
-    private Map<String, Object> singletonBeanCacheMap = new HashMap<>();
+    private Map<String, Object> factoryBeanObjectCache = new HashMap<>();
 
     /**
      * 存放所有被代理过的对象
      */
-    private Map<String, BeanWrapper> beanWrapperMap = new ConcurrentHashMap<>();
+    private Map<String, BeanWrapper> factoryBeanInstanceCache = new ConcurrentHashMap<>();
 
 
     public ApplicationContext(String ...locations) {
@@ -51,6 +44,11 @@ public class ApplicationContext extends DefaultListableBeanFactory implements Be
         }
     }
 
+    @Override
+    public Object getBean(Class<?> beanClass) throws Exception {
+        return getBean(beanClass.getName());
+    }
+
     // 依赖注入，从这里开始
     //通过读取BeanDefinition中的信息
     //然后，通过反射机制创建一个实例并返回
@@ -59,13 +57,13 @@ public class ApplicationContext extends DefaultListableBeanFactory implements Be
     // 1.保留原来的oop关系；
     // 2.需要对它进行扩展，增加（为以后AOP打下基础）
     @Override
-    public Object getBean(String beanName) {
+    public Object getBean(String beanName) throws Exception {
         BeanDefinition beanDefinition = this.beanDefinitionMap.get(beanName);
         try {
             //生成通知事件
             BeanPostProcessor beanPostProcessor = new BeanPostProcessor();
 
-            Object instance = instantionBean(beanDefinition);
+            Object instance = instantiateBean(beanName, beanDefinition);
             if (null == instance){
                 return null;
             }
@@ -73,7 +71,7 @@ public class ApplicationContext extends DefaultListableBeanFactory implements Be
             // 在实例化以前调用一次
             beanPostProcessor.postProcessBeforeInitialization(instance, beanName);
             BeanWrapper beanWrapper = new BeanWrapper(instance);
-            this.beanWrapperMap.put(beanName, beanWrapper);
+            this.factoryBeanInstanceCache.put(beanName, beanWrapper);
 //            beanWrapper.setAopConfig(instantionAopConfig(beanDefinition));
 //            beanWrapper.setBeanPostProcessor(beanPostProcessor);
             // 在实例化以后调用一次
@@ -81,7 +79,7 @@ public class ApplicationContext extends DefaultListableBeanFactory implements Be
             populateBean(beanName, instance);
 
             //通过这样一调用，相当于给我们自己留有了可操作的空间
-            return beanWrapperMap.get(beanName).getWrapperInstance();
+            return factoryBeanInstanceCache.get(beanName).getWrapperInstance();
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -89,25 +87,15 @@ public class ApplicationContext extends DefaultListableBeanFactory implements Be
         return null;
     }
 
-    private AopConfig instantionAopConfig(BeanDefinition beanDefinition) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InstantiationException {
+    private AdvisedSupport instantionAopConfig(BeanDefinition beanDefinition) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InstantiationException {
         AopConfig config = new AopConfig();
-        String expression = reader.getConfig().getProperty("pointCut");
-        String[] before = reader.getConfig().getProperty("aspectBefore").split("\\s");
-        String[] after = reader.getConfig().getProperty("aspectAfter").split("\\s");
-
-        String className = beanDefinition.getBeanClassName();
-        Class<?> clazz = Class.forName(className);
-
-        Pattern pattern = Pattern.compile(expression);
-        Class aspectClass = Class.forName(before[0]);
-        for (Method m : clazz.getMethods()){
-            Matcher matcher = pattern.matcher(m.toString());
-            if (matcher.matches()){
-                config.put(m, aspectClass.newInstance(), new Method[]{aspectClass.getMethod(before[1]),aspectClass.getMethod(after[1])});
-            }
-        }
-
-        return config;
+        config.setPointCut(this.reader.getConfig().getProperty("pointCut"));
+        config.setAspectClass(this.reader.getConfig().getProperty("aspectClass"));
+        config.setAspectBefore(this.reader.getConfig().getProperty("aspectBefore"));
+        config.setAspectAfter(this.reader.getConfig().getProperty("aspectAfter"));
+        config.setAspectAfterThrow(this.reader.getConfig().getProperty("aspectAfterThrow"));
+        config.setAspectAfterThrowingName(this.reader.getConfig().getProperty("aspectAfterThrowingName"));
+        return new AdvisedSupport(config);
     }
 
 
@@ -141,16 +129,26 @@ public class ApplicationContext extends DefaultListableBeanFactory implements Be
     }
 
     // 传一个BeanDefinition，就返回一个实例Bean
-    private Object instantionBean(BeanDefinition beanDefinition){
-        Object instance = null;
+    private Object instantiateBean(String beanName, BeanDefinition beanDefinition){
         String className = beanDefinition.getBeanClassName();
+        Object instance = null;
         try {
-            if (!this.singletonBeanCacheMap.containsKey(className)){
-                instance = this.singletonBeanCacheMap.get(className);
+            if (this.factoryBeanObjectCache.containsKey(className)){
+                instance = this.factoryBeanObjectCache.get(className);
             }else {
                 Class<?> clazz = Class.forName(className);
                 instance = clazz.newInstance();
-                this.singletonBeanCacheMap.put(className, instance);
+
+                //AOP
+                AdvisedSupport config = instantionAopConfig(beanDefinition);
+                config.setTargetClass(clazz);
+                config.setTarget(instance);
+                if (config.pointCutMatch()){
+                    instance = createProxy(config).getProxy();
+                }
+
+                this.factoryBeanObjectCache.put(className, instance);
+                this.factoryBeanObjectCache.put(beanDefinition.getFactoryBeanName(), instance);
             }
             return instance;
         }catch (Exception e){
@@ -160,17 +158,25 @@ public class ApplicationContext extends DefaultListableBeanFactory implements Be
         return null;
     }
 
+    private AopProxy createProxy(AdvisedSupport config) {
+        Class targetClass = config.getTargetClass();
+        if (targetClass.getInterfaces().length > 0){
+            return new JdkDynamicAopProxy(config);
+        }
+        return new CglibAopProxy(config);
+    }
+
     //依赖注入
     private void doAutowired(){
         for (Map.Entry<String, BeanDefinition> beanDefinitionEntry : this.beanDefinitionMap.entrySet()){
             String beanName = beanDefinitionEntry.getKey();
             if (!beanDefinitionEntry.getValue().isLazyInit()){
-                Object obj = getBean(beanName);
-                System.out.println(obj);
+                try {
+                    getBean(beanName);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
-        }
-        for (Map.Entry<String, BeanWrapper> beanWrapperEntry : this.beanWrapperMap.entrySet()){
-            populateBean(beanWrapperEntry.getKey(), beanWrapperEntry.getValue().getOriginalInstance());
         }
     }
 
@@ -196,7 +202,10 @@ public class ApplicationContext extends DefaultListableBeanFactory implements Be
             }
             field.setAccessible(true);
             try {
-                field.set(instance, beanWrapperMap.get(autowiredBeanName).getWrapperInstance());
+                if (factoryBeanInstanceCache.get(autowiredBeanName) == null){
+                    continue;
+                }
+                field.set(instance, factoryBeanInstanceCache.get(autowiredBeanName).getWrapperInstance());
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }

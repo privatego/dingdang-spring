@@ -1,4 +1,4 @@
-package com.dingdang.spring.beans;
+package com.dingdang.spring.beans.config;
 
 //用于用事件监听
 public class BeanPostProcessor {

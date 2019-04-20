@@ -19,22 +19,34 @@ public class DemoAction {
     @Autowired
     private DemoService demoService;
 
-    @RequestMapping("/get")
-    public ModelAndView get(@RequestParam String name){
-        String content = demoService.get(name);
+    @RequestMapping("/add")
+    public ModelAndView add(@RequestParam String title, @RequestParam String content){
+        try {
+            String result = demoService.add(title, content);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         System.out.println(content);
         return new ModelAndView();
     }
 
-    @RequestMapping("query")
-    public void query(HttpServletRequest request, HttpServletResponse resp,
-                      @RequestParam String name){
-        String result = demoService.get(name);
+    @RequestMapping("edit")
+    public ModelAndView edit(HttpServletRequest request, HttpServletResponse resp,
+                      @RequestParam Integer id, @RequestParam String title){
+        String result = demoService.edit(id, title);
         System.out.println(result);
         try {
             resp.getWriter().write(result);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return new ModelAndView();
+    }
+
+    @RequestMapping("delete")
+    public ModelAndView delete(HttpServletRequest request, HttpServletResponse resp, @RequestParam Integer id){
+        String result = demoService.delete(id);
+        System.out.println(result);
+        return new ModelAndView();
     }
 }

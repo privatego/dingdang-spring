@@ -1,6 +1,7 @@
-package com.dingdang.spring.context;
+package com.dingdang.spring.beans.support;
 
 import com.dingdang.spring.beans.BeanDefinition;
+import com.dingdang.spring.context.AbstractApplicationContext;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
